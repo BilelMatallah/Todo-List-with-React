@@ -1,5 +1,5 @@
 import propTypes from "prop-types";
-import React, { useState } from "react";
+//import React, { useState } from "react";
 
 const Formulario = (props) => {
 
@@ -11,7 +11,7 @@ const Formulario = (props) => {
     };
 
     const handleDown = (e) => {
-        if (e.keyCode == 13){
+        if (e.key == "ENTER"){
             props.addNewTask(task)
         };
     };
@@ -32,4 +32,4 @@ const Formulario = (props) => {
 
 };
 
-export default Formulario ;
+//export default Formulario ;

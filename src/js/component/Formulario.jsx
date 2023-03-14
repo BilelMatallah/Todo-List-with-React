@@ -19,7 +19,10 @@ const Formulario = () => {
         if(e.key === "Enter") {
             setTareas(tareas.concat(inputValue));
             setInputValue("")}
-        }
+    };
+
+    //El icono de eliminar solo se muestra cuando la tarea está activada
+    const [show, setShown] = useState(false);
 
     return (
         <div>
@@ -29,17 +32,24 @@ const Formulario = () => {
             <div class="card">
                 <div class="card-body">
                 {tareas.map((nuevaTarea, index) => (
-                        //Aquí se añade la nueva tarea y el icono <FaTrash /> que al hacer click en él, borramos la tarea
-                        <li class="card-text"> {nuevaTarea}
+                    //Aquí se añade la nueva tarea y el icono <FaTrash /> que al hacer click en él, borramos la tarea
+                    <li class="card-text"
+                    
+                    //Aquí es donde usamos el hover en React para mostrar el icono de borrar solo cuando la tarea está activada
+                        onMouseEnter= {() => setShown(true)}
+                        onMouseLeave={() => setShown(false)}> 
+                        
+                        {nuevaTarea}
+                        
+                        {show && (
                             <FaTrash onClick={() => 
-                                setTareas (
-                                    tareas.filter (
-                                        (tareas, currentIndex) =>
-                                        index != currentIndex
-                                    )
-                                )
-                            }/>
-                        </li>))
+                            setTareas (
+                                tareas.filter (
+                                    (tareas, currentIndex) =>
+                                    index != currentIndex))}/>
+                        )}
+
+                    </li>))
                 }  
                 </div>
             </div>

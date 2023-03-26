@@ -25,33 +25,35 @@ const Formulario = () => {
     const [show, setShown] = useState(false);
 
     return (
-        <div>
+        <div className="lista">
             <h3>Mis tareas</h3>
             <input onChange={handleChange} type="text" name="tarea" onKeyDown = {añadirTarea} value = {inputValue}/>
             
-            <div class="card">
-                <div class="card-body">
+            <div className="card">
+                
                 {tareas.map((nuevaTarea, index) => (
                     //Aquí se añade la nueva tarea y el icono <FaTrash /> que al hacer click en él, borramos la tarea
-                    <li class="card-text"
-                    
-                    //Aquí es donde usamos el hover en React para mostrar el icono de borrar solo cuando la tarea está activada
-                        onMouseEnter= {() => setShown(true)}
-                        onMouseLeave={() => setShown(false)}> 
+                    <div className="g">
+                        <li className="tarea"
                         
-                        {nuevaTarea}
-                        
-                        {show && (
-                            <FaTrash onClick={() => 
-                            setTareas (
-                                tareas.filter (
-                                    (tareas, currentIndex) =>
-                                    index != currentIndex))}/>
-                        )}
+                        //Aquí es donde usamos el hover en React para mostrar el icono de borrar solo cuando la tarea está activada
+                            onMouseEnter= {() => setShown(true)}
+                            onMouseLeave={() => setShown(false)}> 
+                            
+                            {nuevaTarea}
+                            
+                            {show && (
+                                <FaTrash onClick={() => 
+                                setTareas (
+                                    tareas.filter (
+                                        (tareas, currentIndex) =>
+                                        index != currentIndex))}/>
+                            )}
 
-                    </li>))
+                        </li>
+                    </div>))
                 }  
-                </div>
+                
             </div>
 
         </div>

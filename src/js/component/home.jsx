@@ -7,7 +7,7 @@ import Formulario from "./Formulario.jsx";
 const Home = () => {
 
 	return (
-		<div className="container">
+		<div className="container text-center">
 			<Formulario />
 		</div>
 	);

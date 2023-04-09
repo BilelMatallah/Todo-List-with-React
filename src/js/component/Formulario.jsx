@@ -31,7 +31,8 @@ const Formulario = () => {
             
             <div className="card">
                 
-                {tareas.map((nuevaTarea, index) => (
+                
+                { tareas.length ? tareas.map((nuevaTarea, index) => (
                     //Aquí se añade la nueva tarea y el icono <FaTrash /> que al hacer click en él, borramos la tarea
                     <div className="lista">
                         <li className="tarea"
@@ -52,7 +53,7 @@ const Formulario = () => {
 
                         </li>
                     </div>))
-                }  
+                : <h1>Añada una tarea</h1>}  
                 
             </div>
 
@@ -61,4 +62,4 @@ const Formulario = () => {
 }
 
 
-export default Formulario ;
+export default Formulario;

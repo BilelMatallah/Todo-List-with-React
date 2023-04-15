@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FaTrash } from "react-icons/fa";
+import { FaRegWindowClose } from "react-icons/fa";
 
 
 const Formulario = () => {
@@ -26,14 +26,14 @@ const Formulario = () => {
 
     return (
         <div className="todo">
-            <h3>Mis tareas</h3>
-            <input onChange={handleChange} type="text" name="tarea" onKeyDown = {añadirTarea} value = {inputValue}/>
+            <h3>ToDo list</h3>
+            <input onChange={handleChange} type="text" name="tarea" onKeyDown = {añadirTarea} value = {inputValue} placeholder="Add a new ToDo"/>
             
             <div className="card">
                 
                 
                 { tareas.length ? tareas.map((nuevaTarea, index) => (
-                    //Aquí se añade la nueva tarea y el icono <FaTrash /> que al hacer click en él, borramos la tarea
+                    //Aquí se añade la nueva tarea y el icono <FaRegWindowClose />
                     <div className="lista">
                         <li className="tarea"
                         
@@ -44,7 +44,8 @@ const Formulario = () => {
                             {nuevaTarea}
                             
                             {show && (
-                                <FaTrash onClick={() => 
+                                //Icono que al hacer click en él, borramos la tarea
+                                <FaRegWindowClose className="icon" onClick={() => 
                                 setTareas (
                                     tareas.filter (
                                         (tareas, currentIndex) =>
@@ -53,10 +54,11 @@ const Formulario = () => {
 
                         </li>
                     </div>))
-                : <h1>Añada una tarea</h1>}  
+                //Cuando no haya tareas pendientes, mostramos el siguiente mensaje:
+                : <p>No Tasks left, add tasks</p>}  
                 
             </div>
-
+            
         </div>
     );
 }

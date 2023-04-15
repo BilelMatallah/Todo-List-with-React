@@ -1,22 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
 
 body {
-    background-color:rgb(218, 231, 255);
+    background-color:rgb(23, 30, 126);
+
 }
 
 input {
     margin-bottom: 50px;
 }
 
-.card {
-    background-color: rgb(248, 255, 58);
+.container {
+    display: grid;
+    place-items: center;
 }
 
-/*.lista {
-    margin: 20px;
-    padding: 20px;
-}*/
+.card {
+    background-color: rgb(252, 255, 165);
+    width: 500px;
+    margin-top: 70px;
+}
+
+.todo {
+    padding: 80px;
+}
+
+h3 {
+    color: white;
+    font-family: 'Indie Flower', cursive;
+    font-size: 40px;
+}
+
+.lista {
+    text-align: left;
+    list-style-type: none;
+}
+
+.icon {
+    float: right;
+    color: rgb(255, 87, 87);
+}
 
 .tarea {
     padding: 7px;
     margin: 7px;
+    border-left: solid 3px rgb(21, 186, 251);
+    font-family: 'Indie Flower', cursive;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+p {
+    font-size: 15px;
+    font-style: italic;
+    opacity: 0.8;
+    margin: 0;
+    padding: 10px 0;
+
+}
+
+:placeholder-shown {
+    font-style: italic;
+    font-size: 15px;
 }
